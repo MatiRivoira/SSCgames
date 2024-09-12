@@ -1,0 +1,12 @@
+nav {
+    padding: 10px 0px;
+    padding-bottom: 5px;
+    background: rgba(255, 255, 255, 0.027); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de difuminado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+    display: flex;
+    justify-content: space-between; /* Distribuye el contenido de manera adecuada */
+    align-items: center;
+  }
+  

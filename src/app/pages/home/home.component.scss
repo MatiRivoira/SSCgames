@@ -1,0 +1,107 @@
+/* Estilo general para las cards */
+.hover-card {
+    margin: 0px 0px 30px 0px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+  }
+  
+  /* Imagen dentro de la card */
+  .hover-card img {
+    transition: filter 0.3s ease;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Capa que aparece en hover */
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.041); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: inset 0 0 10px rgb(0, 0, 0); /* Sombra interior negra */
+  }
+  
+  /* Texto del overlay */
+  .card-text {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+/* Difuminar la imagen en hover y mostrar la capa */
+.hover-card:hover img {
+    filter: blur(5px);  
+  }
+  
+  
+  .hover-card:hover .card-overlay {
+    opacity: 1;
+  }
+  
+  /* Estilos para copiar */
+  .copy-text {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.603);
+
+    i {
+        font-size: 25px;
+    }
+  }
+  
+  .copy-text:hover {
+    scale: 1.1;
+  }
+  
+  
+  .copy-text .copy-icon {
+    opacity: 1;
+  }
+  
+  .copy-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255)); /* Agrega un resplandor blanco */
+  }
+  
+.carousel-inner {
+  width: 100%;
+  height: 600px; /* Altura fija */
+}
+
+.carousel-inner .carousel-item {
+  height: 100%;
+}
+
+.carousel-inner .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+.overlay-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10; /* Asegura que esté sobre todos los elementos */
+  color: white;
+  text-shadow: 0 4px 10px rgba(255, 255, 255, 0.603);
+  font-size: 50px;
+}
