@@ -20,7 +20,7 @@
                                     </svg>
                                 }
                             </p>
-                            <p class="copy-text" (click)="copyToClipboard('Contraseña: ' + juego.contrasena)">
+                            <p class="copy-text" (click)="copyToClipboard('Contraseña: ' + juego['contraseña'])">
                                 @if (!this.copiedPassword) {
                                     <i class='bx bx-lock'></i>Contraseña
                                 } @else {
@@ -44,7 +44,7 @@
                                         </svg>
                                     }
                                 </p>
-                                <p class="copy-text" (click)="copyToClipboard('ContraseñaAux: ' + juego.contrasenaAux)">
+                                <p class="copy-text" (click)="copyToClipboard('ContraseñaAux: ' + juego['contraseñaAux'])">
                                     @if (!this.copiedPasswordAux) {
                                         <i class='bx bx-lock'></i>Contraseña
                                     } @else {

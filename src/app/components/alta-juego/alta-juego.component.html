@@ -6,9 +6,8 @@
     </div>
   
     <div>
-      <label for="img">Imagen (URL):</label>
-      <input id="img" formControlName="img" type="text">
-      <div *ngIf="juegoForm.get('img')?.invalid && juegoForm.get('img')?.touched">La imagen es requerida.</div>
+      <label for="img">Imagen:</label>
+      <input id="img" type="file" (change)="onFileSelected($event)">
     </div>
   
     <div>
@@ -18,9 +17,9 @@
     </div>
   
     <div>
-      <label for="contraseña">Contraseña:</label>
-      <input id="contraseña" formControlName="contraseña" type="text">
-      <div *ngIf="juegoForm.get('contraseña')?.invalid && juegoForm.get('contraseña')?.touched">La contraseña es requerida.</div>
+      <label for="contrasena">Contraseña:</label>
+      <input id="contrasena" formControlName="contrasena" type="text">
+      <div *ngIf="juegoForm.get('contraseña')?.invalid && juegoForm.get('contrasena')?.touched">La contraseña es requerida.</div>
     </div>
   
     <div>
@@ -35,8 +34,8 @@
     </div>
   
     <div>
-      <label for="contraseñaAux">Contraseña Auxiliar (opcional):</label>
-      <input id="contraseñaAux" formControlName="contraseñaAux" type="password">
+      <label for="contrasenaAux">Contraseña Auxiliar (opcional):</label>
+      <input id="contrasenaAux" formControlName="contrasenaAux" type="text">
     </div>
   
     <button type="submit" [disabled]="juegoForm.invalid">Agregar Juego</button>
