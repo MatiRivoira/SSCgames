@@ -1,0 +1,43 @@
+<form [formGroup]="juegoForm" (ngSubmit)="agregarJuego()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text">
+      <div *ngIf="juegoForm.get('nombre')?.invalid && juegoForm.get('nombre')?.touched">El nombre es requerido.</div>
+    </div>
+  
+    <div>
+      <label for="img">Imagen (URL):</label>
+      <input id="img" formControlName="img" type="text">
+      <div *ngIf="juegoForm.get('img')?.invalid && juegoForm.get('img')?.touched">La imagen es requerida.</div>
+    </div>
+  
+    <div>
+      <label for="correo">Correo:</label>
+      <input id="correo" formControlName="correo" type="email">
+      <div *ngIf="juegoForm.get('correo')?.invalid && juegoForm.get('correo')?.touched">Debe ser un correo válido.</div>
+    </div>
+  
+    <div>
+      <label for="contraseña">Contraseña:</label>
+      <input id="contraseña" formControlName="contraseña" type="text">
+      <div *ngIf="juegoForm.get('contraseña')?.invalid && juegoForm.get('contraseña')?.touched">La contraseña es requerida.</div>
+    </div>
+  
+    <div>
+      <label for="plataforma">Plataforma:</label>
+      <input id="plataforma" formControlName="plataforma" type="text">
+      <div *ngIf="juegoForm.get('plataforma')?.invalid && juegoForm.get('plataforma')?.touched">La plataforma es requerida.</div>
+    </div>
+  
+    <div>
+      <label for="correoAux">Correo Auxiliar (opcional):</label>
+      <input id="correoAux" formControlName="correoAux" type="email">
+    </div>
+  
+    <div>
+      <label for="contraseñaAux">Contraseña Auxiliar (opcional):</label>
+      <input id="contraseñaAux" formControlName="contraseñaAux" type="password">
+    </div>
+  
+    <button type="submit" [disabled]="juegoForm.invalid">Agregar Juego</button>
+  </form>  

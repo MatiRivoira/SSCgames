@@ -1,5 +1,9 @@
 <nav>
     <div class="container-fluid" style="display: flex; justify-content: center; align-items: center">
         <img src="img/favicon.png" alt="SSCgames" width="150px">
+        <div class="searchBar">
+            <i class='bx bx-search'></i>
+            <input type="text" [(ngModel)]="txtBusqueda" placeholder="Buscar" (input)="this.outBusqueda.emit(txtBusqueda)">
+        </div>
     </div>
 </nav>

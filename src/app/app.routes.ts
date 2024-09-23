@@ -9,6 +9,13 @@ export const routes: Routes = [
         ),
     },
     {
+        path: 'alta-juego',
+        loadComponent: () =>
+        import('./components/alta-juego/alta-juego.component').then(
+            (m) => m.AltaJuegoComponent
+        ),
+    },
+    {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full',
