@@ -6,7 +6,7 @@
         @for (juego of this.juegosFiltrados; track $index) {
             <div class="col-md-4">
                 <div class="card hover-card">
-                    <img loading="lazy" [src]="juego.img" alt="Juego 1">
+                    <img loading="lazy" [src]="juego.img" alt="Juego {{$index}}">
                     <div class="card-overlay">
                         <div class="card-text">
                             <p class="copy-text" (click)="copyToClipboard('Correo: ' + juego.correo)">
