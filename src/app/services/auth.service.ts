@@ -31,10 +31,10 @@ export class AuthService {
     return this.auth.signInWithEmailAndPassword(user.email, user.password)
       .then(userCredential => {
         if (userCredential.user && userCredential.user.emailVerified) {
-          console.log('Inicio de sesión exitoso.');
+          this.userSubject.next(userCredential.user); // Emitir el usuario autenticado
           return true;
         } else {
-          throw new Error('El correo electrónico no ha sido verificado.');
+          throw false;
         }
       })
       .catch(error => {

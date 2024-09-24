@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { FirestoreService } from '../../services/firestore.service';
@@ -12,7 +12,7 @@ import { take } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent{
   copiedEmail: string | null = null;
   copiedPassword: string | null = null;
 
@@ -52,6 +52,8 @@ export class HomeComponent implements OnInit{
   juegos!:Juego[];
   juegosFiltrados!:Juego[];
 
+  isLoading:boolean = false;
+
   txtBusqueda:string = "";
 
   constructor () {
@@ -63,9 +65,6 @@ export class HomeComponent implements OnInit{
       this.juegos = juegos;
       this.onBusquedaChange(this.txtBusqueda);
     });
-  }
-
-  ngOnInit(): void {
   }
 
   onBusquedaChange(event: string): void {
