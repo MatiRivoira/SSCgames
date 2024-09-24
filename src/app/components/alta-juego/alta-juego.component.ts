@@ -62,7 +62,8 @@ export class AltaJuegoComponent {
           const nuevoJuego: Juego = {
             ...this.juegoForm.value,
             img: imgURL,
-            plataforma: this.plataforma // Guardar la URL de la imagen en Firestore
+            plataforma: this.plataforma,
+            fechaIngreso:  new Date()
           };
           this.bdSvc.addDocument("juegos", nuevoJuego).then(() => {
             console.log('Juego agregado con éxito' + nuevoJuego.nombre);

@@ -68,9 +68,15 @@ export class HomeComponent{
   }
 
   onBusquedaChange(event: string): void {
-    this.txtBusqueda = event.toLowerCase();
-    this.juegosFiltrados = this.juegos.filter( (juego:Juego) => {
-      return juego.nombre.toLowerCase().includes(this.txtBusqueda);
-    })
+    // Eliminar los espacios del término de búsqueda y convertir a minúsculas
+    this.txtBusqueda = event.trim().toLowerCase().replace(/\s+/g, '');
+  
+    this.juegosFiltrados = this.juegos.filter((juego: Juego) => {
+      // Eliminar los espacios del nombre del juego y convertir a minúsculas
+      const nombreJuegoSinEspacios = juego.nombre.toLowerCase().replace(/\s+/g, '');
+      return nombreJuegoSinEspacios.includes(this.txtBusqueda);
+    });
   }
+  
+  
 }
