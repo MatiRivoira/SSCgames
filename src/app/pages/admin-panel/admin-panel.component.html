@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <app-lista-juegos #list></app-lista-juegos>
+        </div>
+        <div class="col-lg-4">
+            <app-alta-juego (outFinish)="onJuegoAdded()"></app-alta-juego>
+        </div>
+    </div>
+</div>

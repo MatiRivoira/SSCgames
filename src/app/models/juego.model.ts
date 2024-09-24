@@ -6,8 +6,10 @@ export class Juego {
     plataforma:string;
     correoAux:any;
     contraseñaAux:any;
+    id:any;
 
-    constructor(nombre:string, img:string, correo:string, contraseña:string, plataforma:string, correoAux?:string, contraseñaAux?:string) {
+    constructor(id:any, nombre:string, img:string, correo:string, contraseña:string, plataforma:string, correoAux?:string, contraseñaAux?:string) {
+        this.id = id;
         this.nombre = nombre;
         this.img = img;
         this.correo = correo;

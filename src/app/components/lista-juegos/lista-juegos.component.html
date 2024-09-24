@@ -1,0 +1,30 @@
+<div *ngIf="this.juegos" class="tabla-container">
+    <app-loading [isLoading]="isLoading"></app-loading>
+    <div class="card-container">
+        <div class="card" *ngFor="let juego of this.juegos">
+            <div class="card-header">
+                <img loading="lazy" [src]="juego.img || 'assets/default-avatar.png'" alt="perfil" class="usuario-avatar">
+                <div class="usuario-info">
+                    <span>{{ juego.nombre }}</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- Detalles del usuario -->
+                <div>
+                    <i class='bx bx-envelope' ></i> {{ juego.correo }} <br>
+                    <i class='bx bx-lock' ></i> {{ juego["contraseña"] }} <br>
+                    <i class='bx bx-desktop'></i> {{ juego.plataforma }} <br>
+                    @if (juego.correoAux) {
+                        <i class='bx bx-envelope'></i> {{ juego.correoAux }} <br>
+                        <i class='bx bx-lock'></i> {{ juego["contraseñaAux"] }}
+                    }
+                </div>
+                <!-- Acciones -->
+                <div class="acciones">
+                    <button class="btn-accion rojo" (click)="borrarJuego(juego)">Borrar</button>
+                    <button class="btn-accion azul">Modificar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

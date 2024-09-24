@@ -9,10 +9,17 @@ export const routes: Routes = [
         ),
     },
     {
-        path: 'alta-juego',
+        path: 'admin-panel',
         loadComponent: () =>
-        import('./components/alta-juego/alta-juego.component').then(
-            (m) => m.AltaJuegoComponent
+        import('./pages/admin-panel/admin-panel.component').then(
+            (m) => m.AdminPanelComponent
+        ),
+    },
+    {
+        path: 'prueba',
+        loadComponent: () =>
+        import('./components/lista-juegos/lista-juegos.component').then(
+            (m) => m.ListaJuegosComponent
         ),
     },
     {
